@@ -1,0 +1,13 @@
+
+.places__website {
+  width: 100%;
+  height: 46px;
+  align-self: end;
+  color: #AAAAAA;
+}
+
+@media screen and (max-width: 565px){
+  .places__website {
+    display: none;
+  }
+}
