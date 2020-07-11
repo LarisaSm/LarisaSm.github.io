@@ -27,5 +27,6 @@
 @media screen and (max-width: 565px){
     .intro {
         margin-bottom: 64px;
+        width: 90%;
     }
 }

@@ -4,6 +4,7 @@
 @import url('__title/cover__title.css');
 
 .cover {
+  max-width: 1184px;
   width: 100%;
   padding-bottom: 62.5%;
   height: 0;
@@ -34,11 +35,11 @@
 
 .cover:hover:after {
   opacity: .8;
-}
+} 
 
 @media screen and (min-width: 1200px) {
   .cover {
-    width: 1184px;
+    padding-bottom: 0;
     height: 740px;
     margin-left: auto;
     margin-right: auto;
