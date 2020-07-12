@@ -8,8 +8,14 @@
   justify-content: space-between;
   align-content: space-between;
   align-items: baseline;
-  min-height: 18px;
   margin: 0 48px 24px 48px;
+  max-width: 1184px;
+}
+
+@media screen and (min-width: 1200px) {
+  .footer {
+    margin: 28px auto 56px auto;
+  }
 }
 
 @media screen and (max-width: 895px) {
