@@ -8,7 +8,7 @@
   transition: opacity .7s ease;
 }
 
-.place__link:hover {
+.places__link:hover {
   opacity: .8;
 }
   

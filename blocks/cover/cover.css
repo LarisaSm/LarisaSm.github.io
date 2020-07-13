@@ -30,14 +30,14 @@
   transition: opacity 1s ease;
 } 
 
+/* с помощью этого псевдоэлемента устанавливаю высоту 
+блока относительно ширины */
 .cover:before {
-  background-color: #2A2C2F;
-  opacity: 0.3;
   content:"";
   width: 0;
   padding-bottom: 62.5%;
   height: 0;
-}
+} 
 
 .cover:hover:after {
   opacity: .8;

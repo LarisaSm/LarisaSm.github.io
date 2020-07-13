@@ -1,7 +1,5 @@
-@import url('__backround/lead__background.css');
 @import url('__caption/lead__caption.css');
 @import url('__image/lead__image.css');
-@import url('__path/lead__path.css');
 @import url('__subtitle/lead__subtitle.css');
 @import url('__title/lead__title.css');
 
@@ -15,7 +13,6 @@
 @media screen and (min-width: 1200px) {
   .lead {
     max-width: 984px;
-    min-height: 1005px;
   }
 }
 

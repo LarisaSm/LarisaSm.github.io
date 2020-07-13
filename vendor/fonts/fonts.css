@@ -24,22 +24,3 @@
   font-family: 'Inter';
   font-weight: bold;
 }
-
-@font-face {
-  src:
-  url('Inter-Italic.woff2') format('woff2'),
-  url('Inter-Italic.woff') format('woff'),
-  url('Inter-Italic.ttf') format('truetype');
-  font-family: 'Inter';
-  font-style: italic;
-}
-
-@font-face {
-  src:
-  url('Inter-BoldItalic.woff2') format('woff2'),
-  url('Inter-BoldItalic.woff') format('woff'),
-  url('Inter-BoldItalic.ttf') format('truetype');
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: bold;
-}
