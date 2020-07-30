@@ -1,0 +1,7 @@
+.profile__info__block {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: baseline;
+  width: 100%;
+}
