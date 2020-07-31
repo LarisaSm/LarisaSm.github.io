@@ -1,3 +1,6 @@
+<!--Не увидела кнопку развернуть в прошлой проверке 
+  и сооветственно весь общий комментарий, извините -->
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -7,79 +10,79 @@
   <title>Mesto</title>
 </head>
 <body class="page">
-  <header class="header">
+  <header class="header page__header">
     <img src="images/header__logo.svg" alt="Место" class="header__logo">
   </header>
 
-  <main class="main">  
-    <section class="profile">
+  <main class="main page__main">  
+    <section class="profile main__profile">
       <img src="images/profile__avatar.png" alt="Аватар" class="profile__avatar">
-      <div class="profile-info">
-        <div class="profile-name">
-          <p class="profile-name__title">Жак-Ив Кусто</p>
-          <button class="profile-name__edit" type="button"></button>
+      <div class="profile__info">
+        <div class="profile__name">
+          <p class="profile__name-title">Жак-Ив Кусто</p>
+          <button class="profile__button_type_edit profile__button" type="button"></button>
         </div>
-        <p class="profile-info__about">Исследователь океана</p>
+        <p class="profile__about">Исследователь океана</p>
       </div>
-      <button class="profile__add-button"></button>
+      <button class="profile__button profile__button_type_add" type="button"></button>
     </section>
 
-    <section class="elements">
+    <section class="elements main__elements">
       <div class="element">
         <img src="images/element__baikal.jpg" alt="Байкал" class="element__img">
         <div class="element__name">
-          <h3 class="element__title">БайкалБайкалБайкалБайкалБайкалБайкалБайкалБайкалБайкалБайкал</h3>
-          <button class="element__like"></button>
+          <h3 class="element__title">Байкал</h3>
+          <button class="element__like" type="button"></button>
         </div>
       </div>
       <div class="element">
         <img src="images/element__elbrus.jpg" alt="Эльбрус" class="element__img">
         <div class="element__name">
           <h3 class="element__title">Эльбрус</h3>
-          <button class="element__like"></button>
+          <button class="element__like" type="button"></button>
         </div>
       </div>
       <div class="element">
         <img src="images/element__niagara.jpg" alt="Ниагара" class="element__img">
         <div class="element__name">
           <h3 class="element__title">Ниагара</h3>
-          <button class="element__like"></button>
+          <button class="element__like" type="button"></button>
         </div>
       </div>
       <div class="element">
         <img src="images/element__grandcanyon.jpg" alt="Большой Каньон" class="element__img">
         <div class="element__name">
           <h3 class="element__title">Большой Каньон</h3>
-          <button class="element__like"></button>
+          <button class="element__like" type="button"></button>
         </div>
       </div>
       <div class="element">
         <img src="images/element__sakura.jpg" alt="Сакура" class="element__img">
         <div class="element__name">
           <h3 class="element__title">Сакура</h3>
-          <button class="element__like"></button>
+          <button class="element__like" type="button"></button>
         </div>
       </div>
       <div class="element">
         <img src="images/element__triangl.jpg" alt="Пирамида" class="element__img">
         <div class="element__name">
           <h3 class="element__title">Пирамида</h3>
-          <button class="element__like"></button>
+          <button class="element__like" type="button"></button>
         </div>
       </div>
     </section>
 
     <div class="popup">
-      <form class="popup__container">
+      <form class="popup__container" name="userInfo">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <input type="text" class="popup__input popup__input_type_name" placeholder="Имя">
-        <input type="text" class="popup__input popup__input_type_about" placeholder="О себе">
+        <input type="text" class="popup__input popup__input_type_name" placeholder="Имя" name="name">
+        <input type="text" class="popup__input popup__input_type_about" placeholder="О себе" name="about">
         <button class="popup__save" type="submit">Сохранить</button>
         <button class="popup__close" type="button"></button>
       </form>
     </div>
   </main>
-  <footer class="footer">	&copy; 2020 Mesto Russia</footer>
-  <script src="script.js"></script>
+  <footer class="footer page__footer">	&copy; 2020 Mesto Russia</footer>
+  <script src="scripts/index.js"></script>
 </body>
 </html>

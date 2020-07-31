@@ -1,16 +1,15 @@
 // Находим форму в DOM
-let formElement = document.querySelector('.popup');
-let profile = document.querySelector('.profile');
+const formElement = document.querySelector('.popup');
+const profile = document.querySelector('.profile');
 
-let editButton = profile.querySelector('.profile-name__edit');
-let closePopupButton = formElement.querySelector('.popup__close');
-let savePopupButton = formElement.querySelector('.popup__save');
+const editButton = profile.querySelector('.profile__button_type_edit');
+const closePopupButton = formElement.querySelector('.popup__close');
 
-let nameInput = formElement.querySelector('.popup__input_type_name'); 
-let jobInput = formElement.querySelector('.popup__input_type_about'); 
+const nameInput = formElement.querySelector('.popup__input_type_name'); 
+const jobInput = formElement.querySelector('.popup__input_type_about'); 
     
-let nameProfile = document.querySelector('.profile-name__title');
-let jobProfile = document.querySelector('.profile-info__about');
+const nameProfile = document.querySelector('.profile__name-title');
+const jobProfile = document.querySelector('.profile__about');
 
 function popupOpenClose () {
   if (formElement.classList.contains('popup_opened')){
@@ -21,6 +20,11 @@ function popupOpenClose () {
   jobInput.value = jobProfile.textContent;
   formElement.classList.add('popup_opened');
   }
+}
+
+function closePopupPage (evt) {
+  if (evt.target !== evt.currentTarget) return
+  popupOpenClose();
 }
 
 // Обработчик «отправки» формы, хотя пока
@@ -42,5 +46,6 @@ function formSubmitHandler (evt) {
 formElement.addEventListener('submit', formSubmitHandler);
 editButton.addEventListener('click', popupOpenClose);
 closePopupButton.addEventListener('click', popupOpenClose);
+formElement.addEventListener('click', closePopupPage);
 
 

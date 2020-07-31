@@ -11,6 +11,7 @@
   height: 19px;
   flex-shrink: 0;
   margin-left: 27px;
+  transition: opacity 2s ease;
 }
 
 .element__like:focus{
@@ -19,4 +20,5 @@
 
 .element__like:hover {
   cursor: pointer;
+  opacity: 0.6;
 }

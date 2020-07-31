@@ -4,14 +4,11 @@
   font-size: 18px;
   line-height: 22px;
   color: #545454;
-  margin-bottom: 60px;
-  margin-left: 19px;
 }
 
 @media screen and (max-width: 450px) {
   .footer {
     font-size: 14px;
     line-height: 17px;
-    margin-bottom: 36px;
   }
 }
