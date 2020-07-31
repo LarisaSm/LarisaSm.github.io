@@ -1,4 +1,4 @@
-.profile__addButton {
+.profile__add-button {
   width: 150px;
   height: 50px;
   padding: 0;
@@ -14,18 +14,18 @@
   margin-left: auto;
 }
 
-.profile__addButton:focus {
+.profile__add-button:focus {
   outline: none;
 }
 
-.profile__addButton:hover {
-  background-image: url(../../../images/profile__addButton_hover.svg);
+.profile__add-button:hover {
+  opacity: .6;
   cursor: pointer;
   border: 2px solid rgba(255, 255, 255, 0.6);
 }
 
 @media screen and (max-width: 690px) {
-  .profile__addButton {
+  .profile__add-button {
     align-self: center;
     justify-content: center;
     margin: 0;

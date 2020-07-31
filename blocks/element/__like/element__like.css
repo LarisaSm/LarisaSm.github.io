@@ -10,8 +10,13 @@
   width: 22px;
   height: 19px;
   flex-shrink: 0;
+  margin-left: 27px;
 }
 
 .element__like:focus{
   outline: none;
+}
+
+.element__like:hover {
+  cursor: pointer;
 }

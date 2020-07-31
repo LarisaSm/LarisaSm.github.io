@@ -1,4 +1,4 @@
-.profile__info__edit {
+.profile-name__edit {
   padding: 0;
   font: inherit;
   color: inherit;
@@ -8,25 +8,23 @@
   width: 24px;
   height: 24px;
   flex-shrink: 0;
-  background-image: url(../../../../images/profile__info__edit.svg);
+  background-image: url(../../../images/profile__info__edit.svg);
   background-position: center;
   flex-wrap: nowrap;
 }
 
-.profile__info__edit:focus {
+.profile-name__edit:focus {
   outline: none;
 }
 
-.profile__info__edit:hover {
+.profile-name__edit:hover {
   border: 1px solid rgba(255, 255, 255, 0.6);
-  background-image: url(../../../../images/profile__info__edit_hover.svg);
-  background-position: center;
-  background-repeat: no-repeat;
+  opacity: .8;
   cursor: pointer;
 }
 
 @media screen and (max-width: 450px) {
-  .profile__info__edit {
+  .profile-name__edit {
     width: 18px;
     height: 18px;
   }

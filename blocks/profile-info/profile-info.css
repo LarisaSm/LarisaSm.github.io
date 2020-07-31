@@ -1,17 +1,20 @@
-.profile__info {
+.profile-info {
   margin-top: 18px;
   margin-right: 17px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 690px) {
-  .profile__info {
+  .profile-info {
     margin-bottom: 36px;
     margin-right: 0;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .profile__info {
+  .profile-info {
     margin-right: 0;
     margin-bottom: 32px;
   }

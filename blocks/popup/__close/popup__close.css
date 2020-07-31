@@ -19,7 +19,7 @@
 }
 
 .popup__close:hover {
-  background-image: url(../../../images/popup__close_hover.svg);
+  opacity: .5;
   cursor: pointer;
 }
 
