@@ -28,141 +28,113 @@ const jobInput = editUser.querySelector('.popup__input_type_about');
 const nameProfile = document.querySelector('.profile__name-title');
 const jobProfile = document.querySelector('.profile__about');
 
-const initialCards = [
-  {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-      name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-      name: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
-
-function formSubmitHandlerElement (evt) {
+function addCardSubmitHandler (evt) {
   evt.preventDefault();
   addUserElementCard(aboutImg.value, nameImg.value);
-  popupOpenCloseAddCard();
+  toggleAddCardPopup();
   aboutImg.value = '';
   nameImg.value = '';
 }
 
-
-function addUserElementCard (aboutImg, nameImg) {
-  const userElementCard = cardTemplate.cloneNode(true);
-  
-  userElementCard.querySelector('.element__img').src = aboutImg;
-  userElementCard.querySelector('.element__title').textContent = nameImg;
-
-  userElementCard.querySelector('.element__img').addEventListener('click', function (evt) {
-    if (showImage.classList.contains('popup_opened')){
-      showImage.classList.remove('popup_opened');
-    }
-    else {
-    const titleElement = evt.target.nextElementSibling.querySelector('.element__title');
-    const imgSrc = evt.target.getAttribute('src');
-    altImage.textContent = titleElement.textContent;
-    imageSrc.setAttribute('src', imgSrc);
-    showImage.classList.add('popup_opened');
+function toggleShowImagePopup () {
+  if (showImage.classList.contains('.popup_opened')) {
+    showImage.removeEventListener('click', closeByOverlayClick);
   }
+  else {
+    showImage.addEventListener('click', closeByOverlayClick);
+  }
+  togglePopup (showImage);
+}
+
+function addLisenerCardElements (card) {
+  const cardImg = card.querySelector('.element__img');
+  cardImg.addEventListener('click', function (evt) {
+    if (showImage.classList.contains('popup_opened')){}
+    else {
+      const titleElement = evt.target.nextElementSibling.querySelector('.element__title');
+      const imgSrc = evt.target.getAttribute('src');
+      altImage.textContent = titleElement.textContent;
+      imageSrc.setAttribute('src', imgSrc);
+    }
+    toggleShowImagePopup ();
   });
 
-  userElementCard.querySelector('.element__like').addEventListener('click', function (evt) {
+  card.querySelector('.element__like').addEventListener('click', function (evt) {
     evt.target.classList.toggle('element__like_type_active');
   });
 
-  userElementCard.querySelector('.element__trash').addEventListener('click', function (evt) {
+  card.querySelector('.element__trash').addEventListener('click', function (evt) {
     const listItem = evt.target.closest('.element');
-  listItem.remove();
-  })
+    listItem.remove();
+  });
 
-  elements.prepend(userElementCard);
-  
 }
 
-function popupOpenCloseEditUser () {
-  if (editUser.classList.contains('popup_opened')){
-    editUser.classList.remove('popup_opened');
+function createCardElement (aboutImg, nameImg) {
+  const card = cardTemplate.cloneNode(true);
+  const cardImg = card.querySelector('.element__img');
+  cardImg.src = aboutImg;
+  card.querySelector('.element__title').textContent = nameImg;
+  cardImg.alt = nameImg;
+  return card;
+}
+
+function addUserElementCard (aboutImg, nameImg) {
+  const card = createCardElement (aboutImg, nameImg);
+  addLisenerCardElements (card);
+  elements.prepend(card);
+}
+
+function togglePopup (popup) {
+  popup.classList.toggle('popup_opened');
+}
+
+function toggleEditUserPopup () {
+  if (editUser.classList.contains('popup_opened')) {
+    editUser.removeEventListener('click', closeByOverlayClick);
   }
   else {
-  nameInput.value = nameProfile.textContent;
-  jobInput.value = jobProfile.textContent;
-  editUser.classList.add('popup_opened');
+    nameInput.value = nameProfile.textContent;
+    jobInput.value = jobProfile.textContent;
+    editUser.addEventListener('click', closeByOverlayClick);
   }
+  togglePopup (editUser);
 }
 
-function popupOpenCloseAddCard () {
-  addCard.classList.toggle('popup_opened');
-}
-
-
-function closePopupPageEditUser (evt) {
-  if (evt.target !== evt.currentTarget) return
-  popupOpenCloseEditUser();
-}
-
-function closePopupPageAddCard (evt) {
-  if (evt.target !== evt.currentTarget) return
-  popupOpenCloseAddCard();
-}
-
-function popupOpenCloseShowImage (item) {
-  if (showImage.classList.contains('popup_opened')){
-    showImage.classList.remove('popup_opened');
+function toggleAddCardPopup (evt) {
+  if (addCard.classList.contains('.popup_opened')) {
+    addCard.removeEventListener('click', closeByOverlayClick);
   }
   else {
-
-  const titleElement = element[item].querySelector('.element__title');
-  const imgSrc = imgElement[item].getAttribute('src');
-  altImage.textContent = titleElement.textContent;
-  imageSrc.setAttribute('src', imgSrc);
-  showImage.classList.add('popup_opened');
+    addCard.addEventListener('click', closeByOverlayClick);
+  }
+  togglePopup (addCard);
 }
+
+function closeByOverlayClick (evt) {
+  if (evt.target !== evt.currentTarget) return
+  togglePopup(evt.target);
 }
-// Обработчик «отправки» формы, хотя пока
-// она никуда отправляться не будет
-function formSubmitHandler (evt) {
-    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-                        // Так мы можем определить свою логику отправки.
-                        // О том, как это делать, расскажем позже.
 
 
-    // Получите значение полей из свойства value
+function editProfileSubmitHandler (evt) {
+    evt.preventDefault();
     nameProfile.textContent = nameInput.value;
     jobProfile.textContent = jobInput.value;
-    popupOpenCloseEditUser();
+    toggleEditUserPopup ();
 }
 
 initialCards.forEach(item => addUserElementCard(item.link, item.name));
 
 
 //Обработчики событий
-editUser.addEventListener('submit', formSubmitHandler);
-editUserButton.addEventListener('click', popupOpenCloseEditUser);
-closeEditUserButton.addEventListener('click', popupOpenCloseEditUser);
-editUser.addEventListener('click', closePopupPageEditUser);
-addCardButton.addEventListener('click', popupOpenCloseAddCard);
-closeAddCard.addEventListener('click', popupOpenCloseAddCard);
-addCard.addEventListener('click', closePopupPageAddCard);
-closeShowImage.addEventListener('click', popupOpenCloseShowImage);
-addCard.addEventListener('submit', formSubmitHandlerElement);
+editUser.addEventListener('submit', editProfileSubmitHandler);
+editUserButton.addEventListener('click', toggleEditUserPopup);
+closeEditUserButton.addEventListener('click', toggleEditUserPopup);
+addCardButton.addEventListener('click', toggleAddCardPopup);
+closeAddCard.addEventListener('click', toggleAddCardPopup);
+closeShowImage.addEventListener('click', toggleShowImagePopup);
+addCard.addEventListener('submit', addCardSubmitHandler);
 
 
 
