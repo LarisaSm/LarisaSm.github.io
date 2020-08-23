@@ -28,36 +28,37 @@ const jobInput = editUser.querySelector('.popup__input_type_about');
 const nameProfile = document.querySelector('.profile__name-title');
 const jobProfile = document.querySelector('.profile__about');
 
-function addCardSubmitHandler (evt) {
-  evt.preventDefault();
-  addUserElementCard(aboutImg.value, nameImg.value);
-  toggleAddCardPopup();
-  aboutImg.value = '';
-  nameImg.value = '';
+function togglePopup (popup) {
+  popup.classList.toggle('popup_opened');
 }
 
-function toggleShowImagePopup () {
-  if (showImage.classList.contains('.popup_opened')) {
+function closeByOverlayClick (evt) {
+  if (evt.target !== evt.currentTarget) return
+  togglePopup(evt.target);
+}
+
+function toggleShowImagePopup (evt) {
+  if (showImage.classList.contains('popup_opened')) {
     showImage.removeEventListener('click', closeByOverlayClick);
   }
   else {
     showImage.addEventListener('click', closeByOverlayClick);
+    const titleElement = evt.target.nextElementSibling.querySelector('.element__title');
+    const imgSrc = evt.target.getAttribute('src');
+    altImage.textContent = titleElement.textContent;
+    imageSrc.setAttribute('src', imgSrc);
   }
-  togglePopup (showImage);
+  togglePopup(showImage);
 }
 
-function addLisenerCardElements (card) {
+function createCardElement (aboutImg, nameImg) {
+  const card = cardTemplate.cloneNode(true);
   const cardImg = card.querySelector('.element__img');
-  cardImg.addEventListener('click', function (evt) {
-    if (showImage.classList.contains('popup_opened')){}
-    else {
-      const titleElement = evt.target.nextElementSibling.querySelector('.element__title');
-      const imgSrc = evt.target.getAttribute('src');
-      altImage.textContent = titleElement.textContent;
-      imageSrc.setAttribute('src', imgSrc);
-    }
-    toggleShowImagePopup ();
-  });
+  cardImg.src = aboutImg;
+  card.querySelector('.element__title').textContent = nameImg;
+  cardImg.alt = nameImg;
+
+  cardImg.addEventListener('click', evt => toggleShowImagePopup (evt));
 
   card.querySelector('.element__like').addEventListener('click', function (evt) {
     evt.target.classList.toggle('element__like_type_active');
@@ -67,26 +68,30 @@ function addLisenerCardElements (card) {
     const listItem = evt.target.closest('.element');
     listItem.remove();
   });
-
-}
-
-function createCardElement (aboutImg, nameImg) {
-  const card = cardTemplate.cloneNode(true);
-  const cardImg = card.querySelector('.element__img');
-  cardImg.src = aboutImg;
-  card.querySelector('.element__title').textContent = nameImg;
-  cardImg.alt = nameImg;
   return card;
 }
 
-function addUserElementCard (aboutImg, nameImg) {
-  const card = createCardElement (aboutImg, nameImg);
-  addLisenerCardElements (card);
+function addCards (aboutImg, nameImg) {
+  const card = createCardElement(aboutImg, nameImg);
   elements.prepend(card);
 }
 
-function togglePopup (popup) {
-  popup.classList.toggle('popup_opened');
+function toggleAddCardPopup (evt) {
+  if (addCard.classList.contains('.popup_opened')) {
+    addCard.removeEventListener('click', closeByOverlayClick);
+  }
+  else {
+    addCard.addEventListener('click', closeByOverlayClick);
+  }
+  togglePopup(addCard);
+}
+
+function addCardSubmitHandler (evt) {
+  evt.preventDefault();
+  addCards(aboutImg.value, nameImg.value);
+  toggleAddCardPopup();
+  aboutImg.value = '';
+  nameImg.value = '';
 }
 
 function toggleEditUserPopup () {
@@ -98,34 +103,17 @@ function toggleEditUserPopup () {
     jobInput.value = jobProfile.textContent;
     editUser.addEventListener('click', closeByOverlayClick);
   }
-  togglePopup (editUser);
+  togglePopup(editUser);
 }
-
-function toggleAddCardPopup (evt) {
-  if (addCard.classList.contains('.popup_opened')) {
-    addCard.removeEventListener('click', closeByOverlayClick);
-  }
-  else {
-    addCard.addEventListener('click', closeByOverlayClick);
-  }
-  togglePopup (addCard);
-}
-
-function closeByOverlayClick (evt) {
-  if (evt.target !== evt.currentTarget) return
-  togglePopup(evt.target);
-}
-
 
 function editProfileSubmitHandler (evt) {
     evt.preventDefault();
     nameProfile.textContent = nameInput.value;
     jobProfile.textContent = jobInput.value;
-    toggleEditUserPopup ();
+    toggleEditUserPopup();
 }
 
-initialCards.forEach(item => addUserElementCard(item.link, item.name));
-
+initialCards.forEach(item => addCards(item.link, item.name));
 
 //Обработчики событий
 editUser.addEventListener('submit', editProfileSubmitHandler);

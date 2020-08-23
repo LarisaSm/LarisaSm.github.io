@@ -12,8 +12,6 @@
 
 @media screen and (max-width: 690px) {
   .profile__button_type_add {
-    /* align-self: center;
-    justify-content: center; */
     margin: 0;
     width: 282px;
   }
