@@ -2,6 +2,7 @@
   width: 358px;
   height: 50px;
   margin-bottom: 36px;
+  margin-top: 18px;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -31,6 +32,7 @@
     line-height: 22px;
     height: 40px;
     margin-bottom: 30px;
+    margin-top: 14px;
   }
 }
 
@@ -41,5 +43,6 @@
     line-height: 22px;
     height: 40px;
     margin-bottom: 25px;
+    margin-top: 10px;
   }
 }
