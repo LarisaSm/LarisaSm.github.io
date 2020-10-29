@@ -1,5 +1,5 @@
 .popup__input {
-  font-family: inherit; 
+  font-family: inherit;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -9,7 +9,7 @@
   height: 27px;
   outline: none;
   border: 0;
-  border-bottom: 1px solid rgba(0,0,0,.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
 }
 
@@ -30,4 +30,4 @@
   .popup__input {
     margin-bottom: 20px;
   }
-} 
+}

@@ -14,13 +14,12 @@
   transition: opacity 2s ease;
 }
 
-
 .popup__close:focus {
   outline: none;
 }
 
 .popup__close:hover {
-  opacity: .6;
+  opacity: 0.6;
   cursor: pointer;
 }
 
