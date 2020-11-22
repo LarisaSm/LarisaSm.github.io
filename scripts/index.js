@@ -1,3 +1,9 @@
+
+import { Card as cardI } from "./card.js";
+import {formValidator} from "./FormValidator.js"
+
+
+
 const profile = document.querySelector(".profile");
 const editUserPopup = document.querySelector(".edit-user");
 const addCardPopup = document.querySelector(".add-card");
@@ -83,32 +89,9 @@ function toggleImagePopup(evt) {
   togglePopup(imagePopup);
 }
 
-function createCardElement(aboutImg, nameImg) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImg = cardElement.querySelector(".element__img");
-  cardImg.src = aboutImg;
-  cardElement.querySelector(".element__title").textContent = nameImg;
-  cardImg.alt = nameImg;
-  cardImg.addEventListener("click", toggleImagePopup);
-
-  cardElement
-    .querySelector(".element__like")
-    .addEventListener("click", function (evt) {
-      evt.target.classList.toggle("element__like_type_active");
-    });
-
-  cardElement
-    .querySelector(".element__trash")
-    .addEventListener("click", function (evt) {
-      const listItem = evt.target.closest(".element");
-      listItem.remove();
-    });
-  return cardElement;
-}
-
 function addCards(aboutImg, nameImg) {
-  const card = createCardElement(aboutImg, nameImg);
-  cards.prepend(card);
+  const card = new cardI(aboutImg, nameImg, cardTemplate, toggleImagePopup);
+  card.render(cards);
 }
 
 function toggleAddCardPopup() {
@@ -134,6 +117,17 @@ function editProfileSubmitHandler(evt) {
   userName.textContent = cardTitleInput.value;
   userJob.textContent = cardLinkInput.value;
   toggleEditUserPopup();
+}
+
+function enableValidation({formSelector, ...rest}) {
+  // Найдём все формы с указанным классом в DOM,
+  // сделаем из них массив методом Array.from
+  const formList = Array.from(document.querySelectorAll(formSelector));
+  // Переберём полученную коллекцию
+  formList.forEach((formElement) => {
+    const valid = new formValidator(rest, formElement);
+    valid.enableValidation();
+    });
 }
 
 enableValidation({
