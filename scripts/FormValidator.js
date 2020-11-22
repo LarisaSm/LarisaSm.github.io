@@ -25,6 +25,7 @@ export class formValidator {
     inputElement.classList.remove(this._inputErrorClass);
     errorElement.classList.remove(this._errorClass);
     errorElement.textContent = "";
+    
   };
 
   _isValid (inputElement) {
@@ -48,6 +49,7 @@ export class formValidator {
       return !inputElement.validity.valid;
     });
   }
+
   _toggleButtonState(inputList, buttonElement) {
     if (this._hasInvalidInput(inputList)) {
       buttonElement.classList.add(this._inactiveButtonClass);
@@ -80,7 +82,6 @@ export class formValidator {
     
   }
 
-
   enableValidation() {
     this._formElement.addEventListener("submit", (evt) => {
       // У каждой формы отменим стандартное поведение
@@ -88,4 +89,23 @@ export class formValidator {
     });
     this._setEventListeners();
   }
+
+  reset() {
+      const inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
+      const buttonElement = this._formElement.querySelector(this._submitButtonSelector);
+
+      const error = Array.from(this._formElement.querySelectorAll("span"));
+
+      this._formElement.querySelector('form').reset();
+
+     
+      if (buttonElement)
+        this._toggleButtonState(inputList, buttonElement, this._inactiveButtonClass);
+
+      inputList.forEach((inputElement) => {
+        this._hideInputError(inputElement);
+      });
+    }
+
+
 }
