@@ -1,9 +1,9 @@
 export class Card {
-  constructor (aboutImg, nameImg, cardTemplate, toggleImagePopup) {
-    this._aboutImg = aboutImg;
-    this._nameImg = nameImg;
+  constructor (item, cardTemplate, handleCardClick) {
+    this._aboutImg = item.link;
+    this._nameImg = item.name;
     this._cardTemplate = cardTemplate.querySelector('.element');
-    this._toggleImagePopup = toggleImagePopup;
+    this._openImagePopup = handleCardClick;
   }
 
   _createCardElement() {
@@ -23,7 +23,7 @@ export class Card {
  
   _addEventLisener (cardImg) {
   
-    cardImg.addEventListener("click", this._toggleImagePopup);
+    cardImg.addEventListener("click", this._openImagePopup);
 
     this._cardElement
       .querySelector(".element__like")
@@ -33,7 +33,7 @@ export class Card {
       .querySelector(".element__trash")
       .addEventListener("click", () => this._delete());
   }
-  render (container) {
+  render () {
     
     this._cardElement = this._cardTemplate.cloneNode(true);
     const cardImg = this._cardElement.querySelector(".element__img");
@@ -43,6 +43,7 @@ export class Card {
     cardImg.alt = this._nameImg;
 
     this._addEventLisener(cardImg);
-    container.prepend(this._cardElement);
+
+    return this._cardElement;
   }
 }

@@ -83,10 +83,6 @@ export class formValidator {
   }
 
   enableValidation() {
-    this._formElement.addEventListener("submit", (evt) => {
-      // У каждой формы отменим стандартное поведение
-      evt.preventDefault();
-    });
     this._setEventListeners();
   }
 
