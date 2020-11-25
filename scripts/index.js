@@ -5,6 +5,7 @@ import {Section} from './section.js'
 import { PopupWithImage } from "./popupWithImage.js";
 import { PopupWithForm } from "./popupWithForm.js";
 import {userInfo} from './userInfo.js'
+import {initialCards} from './initial-cards.js'
 
 import {
   editUserPopup, 
