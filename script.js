@@ -6,13 +6,22 @@ const spinner = document.getElementById('spinner')
 const emailSuccess = document.getElementById('emailSuccess')
 const emailFail = document.getElementById('emailFail')
 const readMore = document.getElementById('readMore')
+const readShort = document.getElementById('readShort');
 const descriptionShort = document.getElementById('descriptionShort')
 const descriptionLong = document.getElementById('descriptionLong')
 
-readMore.addEventListener('click', async () => {
-    descriptionShort.classList.add('hide')
-    descriptionLong.classList.remove('hide')
-})
+readMore.addEventListener('click', reedMore);
+readShort.addEventListener('click', reedMore);
+
+// async () => {
+    // descriptionShort.classList.toggle('hide')
+//     // descriptionLong.classList.toggle('hide')
+// })
+
+function reedMore () {
+    descriptionShort.classList.toggle('hide')
+    descriptionLong.classList.toggle('hide')
+}
 
 submitBtn.addEventListener('click', async (event) => {
     event.preventDefault();

@@ -2,6 +2,7 @@
 @import url(./logo/logo.css);
 @import url(./logo/_place/logo_place_footer.css);
 
+
 * {
     padding: 0;
     margin: 0;
@@ -16,7 +17,13 @@
 a:focus,a:active{outline: none;}
 
 body {
-    background-color: #007cba;
+    /* background-color: #007cba; */
+    background-color: #6bb6e0;
+
+}
+
+.main {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .social {
@@ -52,16 +59,21 @@ textarea {
 .description_img {
     display: block;
     margin: 0 auto;
+    width: 95%;
+
 }
 .description_logo {
     margin-bottom: 10px;
     background-color: white;
+    width: 90%;
+
 }
 
 .description_text {
     background-color: white;
     text-align:justify;
-    font-size: 30px;
+    font-size: 15px;
+    font-family: 'EuropeDemiNormal';
 }
 
 abbr {
@@ -77,20 +89,21 @@ abbr {
 
 .feedback_title {
     text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 25px;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Europe Bold', sans-serif;
+    font-size: 30px;
     background-color: white;
     padding: 20px 0;
 }
 
 .form_title {
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Europe Bold', sans-serif;
     font-size: 20px;
 }
 
 form {
-    background-color: #007cba;
+    background-color:#6bb6e0;
     padding: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -261,7 +274,7 @@ form {
     display: none;
 }
 
-#readMore {
+.readMore {
     cursor: pointer;
     color: blue;
 }
