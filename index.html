@@ -1,131 +1,113 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="pages/index.css" />
-    <title>Mesto</title>
-  </head>
-  <body class="page">
-    <header class="header page__header">
-      <img src="images/header__logo.svg" alt="Место" class="header__logo" />
-    </header>
+<head>
+    <meta charset="utf-8" />
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+    <meta name="keywords" content="Отзывы о работе городского электротранспорта">
+    <title>НАМ ВАЖНО ВАШЕ МНЕНИЕ</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <style>
+        article, aside, details, figcaption, figure, footer,header,
+        hgroup, menu, nav, section { display: block; }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="loader hide spin" id="spinner"></div>
+        <h1 class="email-success hide" id="emailSuccess">Ваше обращение получено</h1>
+        <h1 class="email-success hide" id="emailFail">произошла ошибка при отправлении письма</h1>
+        <iframe name="hiddenFrame" width="0" height="0" style="display: none;"></iframe>
+        <section class="description">
+            <div style="height: 10px; background-color: transparent"></div>
+            <img class="description_img description_logo" src="images/TransSISTEMS_1080.png" alt="" srcset="images/TransSISTEMS_1080.png 1080w, images/TransSISTEMS_300.png 300w, images/TransSISTEMS_1024.png 1024w, images/TransSISTEMS_768.png 768w" sizes="(max-width: 1080px) 95vw, 1080px">
+            <img class="description_img" src="images/t5_1080.jpg" alt="" srcset="images/t5_1080.jpg 1080w, images/t5_300.jpg 300w, images/t5_1024.jpg 1024w, images/t5_768.jpg 768w" sizes="(max-width: 1080px) 100vw, 1080px">
+            <p id="descriptionShort" class="description_text"><strong>«Адмирал»</strong> – самый современный отечественный троллейбус. Специалисты ПК Транспортные системы разрабатывали эту машину с учетом новейших технических решений, воплощая мечты о комфортном, красивом и безопасном городском транспорте. <strong id="readMore">Читать далее</strong></p>
+            <p id="descriptionLong" class="description_text hide"><strong>«Адмирал»</strong> – самый современный отечественный троллейбус. Специалисты ПК Транспортные системы разрабатывали эту машину с учетом новейших технических решений, воплощая мечты о комфортном, красивом и безопасном городском транспорте.
+                Все здесь сделано для удобства пассажиров, начиная от хорошо читаемого маршрутоуказателя, от трех широких дверей, от мягкого, неназойливого освещения салона. Низкий пол делает троллейбус «Адмирал» доступным для родителей с колясками и маломобильных жителей. В отсутствие ступенек посадка и высадка пассажиров занимает меньше времени, такая машина быстрее идет от кольца до кольца. В салоне летом будет прохладно, а зимой тепло благодаря кондиционеру. Четыре медиакомплекса информируют пассажиров о том, в какой точке маршрута находится машина. Такой троллейбус уже может соперничать с личным автомобилем.</p>
+        </section>
+        <div class="divider"></div>
+        <section class="feedback">
+            <h3 class="feedback_title">Нам важно Ваше мнение!</h3>
+            <div class="divider"></div>
+            <form class="form" action="http://web.monovar.ru/send/email" method="post" autocomplete="on" data-status="init" target="hiddenFrame" id="feedback">
+                <h2 class="form_title">Оставьте свой отзыв</h2>
+                <div class="form_divider"></div>
+                <div class="input-wrapper">
+                    <label class="input-wrapper_label" for="email"><strong>Введите Ваш эл. адрес:</strong> <abbr title="required">*</abbr></label>
+                    <input class="input-wrapper_input" id="email" type="email" required name="email">
+                    <p class="input-wrapper_error-text"> </p>
+                </div>
+                <div class="input-wrapper">
+                    <label class="input-wrapper_label" for="username"><strong>Введите имя:</strong> <abbr title="required">*</abbr></label>
+                    <input class="input-wrapper_input" id="username" required type="text" name="username">
+                    <p class="input-wrapper_error-text"> </p>
+                </div>
+                <div class="textarea-wrapper">
+                    <label class="input-wrapper_label" for="user_feedback"><strong>Текст отзыва:</strong></label>
+                    <textarea class="form_textarea" id="user_feedback" name="text"></textarea>
+                </div>
+                <button class="form-submit" id="submit">Отправить</button>
+            </form>
+        </section>
+        <!-- <section class="social">
+            <img class="social_logo" src="images/logo.png">
 
-    <main class="main page__main">
-      <section class="profile main__profile">
-        <img
-          src="images/profile__avatar.png"
-          alt="Аватар"
-          class="profile__avatar"
-        />
-        <div class="profile__info">
-          <div class="profile__name">
-            <p class="profile__name-title">Жак-Ив Кусто</p>
-            <button
-              class="profile__button profile__button_type_edit"
-              type="button"
-            ></button>
-          </div>
-          <p class="profile__about">Исследователь океана</p>
+            <div>
+            <p class="social_text">Следите за нами в наших социальных сетях</p>
+            <div class="icon-wrapper">
+                <div class="icon-footer"><a class="social_icon gray"><i class="fas fa-link"></i></a><p>GBibnt yfv</p></div>
+                <div class="social_icon black"><a><i class="fab fa-instagram"></i></a></div>
+                <div class="social_icon red"><a><i class="fab fa-youtube"></i></a></div>
+            </div>
         </div>
-        <button
-          class="profile__button profile__button_type_add"
-          type="button"
-        ></button>
-      </section>
+        </section> -->
 
-      <section class="elements main__elements"></section>
-
-      <div class="popup edit-user">
-        <form class="form popup__container" name="edit-user" novalidate>
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <input
-            id="name-input"
-            type="text"
-            class="popup__input popup__input_type_name"
-            autocomplete="off"
-            placeholder="Имя"
-            name="name"
-            minlength="2"
-            maxlength="40"
-            required
-          />
-          <span id="name-input-error" class="popup__input-error"></span>
-          <input
-            id="about-input"
-            type="text"
-            class="popup__input popup__input_type_about"
-            autocomplete="off"
-            placeholder="О себе"
-            name="about"
-            minlength="2"
-            maxlength="200"
-            required
-          />
-          <span id="about-input-error" class="popup__input-error"></span>
-          <button class="popup__save" type="submit">Сохранить</button>
-          <button class="popup__close" type="button"></button>
-        </form>
-      </div>
-
-      <div class="popup add-card">
-        <form class="form popup__container" name="add-card" novalidate>
-          <h2 class="popup__title">Новое место</h2>
-
-          <input
-            id="name-input"
-            type="text"
-            class="popup__input popup__input_type_name"
-            autocomplete="off"
-            placeholder="Название"
-            name="name"
-            minlength="2"
-            maxlength="30"
-            required
-          />
-          <span id="name-input-error" class="popup__input-error"></span>
-          <input
-            id="url-input"
-            type="url"
-            class="popup__input popup__input_type_about"
-            autocomplete="off"
-            placeholder="Ссылка на картинку"
-            name="link"
-            required
-          />
-          <span id="url-input-error" class="popup__input-error"></span>
-
-          <button class="popup__save" type="submit">Создать</button>
-          <button class="popup__close" type="button"></button>
-        </form>
-      </div>
-
-      <div class="popup image">
-        <div class="popup__container image__container">
-          <img
-            src=""
-            alt=""
-            class="popup__image"
-          />
-          <p class="popup__figcaption-image"></p>
-          <button class="popup__close" type="button"></button>
-        </div>
-      </div>
-
-      <template id="card">
-        <div class="element">
-          <img src="" alt="" class="element__img" />
-          <div class="element__name">
-            <h3 class="element__title"></h3>
-            <button class="element__like" type="button"></button>
-          </div>
-          <button class="element__trash" type="button"></button>
-        </div>
-      </template>
+        <footer class="footer">
+            <div class="footer__columns">
+              <div class="footer__column footer__column_content_copyright">
+      
+                <div class="logo logo_place_footer"></div>
+                  <!-- <p class="footer__author">&copy; 2021. ПБТИ</p> -->
+              </div>
+              <nav class="footer__column footer__column_content_info">
+                  <h4 class="footer__column-heading">О Троллейбусе</h4>
+                <ul class="footer__column-links">
+                  <li class="footer__list-item">
+                    <a class="footer__column-link" href="https://praktikum.yandex.ru/" target="_blank">Производитель</a>
+                  </li>
+                  <li class="footer__list-item">
+                    <a class="footer__column-link" href="https://praktikum.yandex.ru/#another-way-to-learn-section" target="_blank">Эксплутататор</a>
+                  </li>
+                  <!-- <li class="footer__list-item">
+                    <a class="footer__column-link" href="#" target="_blank">Наставники</a>
+                  </li> -->
+                </ul>
+              </nav>
+              <div class="footer__column footer__column_content_social">
+                  <h4 class="footer__column-heading">Контакты</h4>
+                <ul class="footer__column-links">
+                  <li class="footer__list-item">
+                    <a class="footer__column-link" href="https://www.facebook.com/yandex.praktikum/" target="_blank">
+                      <img class="footer__social-icon" src="images/facebook_color_white.svg" alt="Facebook">Е-мейл</a>
+                  </li>
+                  <li class="footer__list-item">
+                    <a class="footer__column-link" href="https://vk.com/yandex.praktikum" target="_blank">
+                      <img class="footer__social-icon" src="images/vk_color_white.svg" alt="В Контакте">В Контакте</a>
+                  </li>
+                  <li class="footer__list-item">
+                      <a class="footer__column-link" href="https://www.instagram.com/yndx.praktikum/" target="_blank">
+                      <img class="footer__social-icon" src="images/instagram_color_white.svg" alt="Instagram">Instagram</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </footer>
     </main>
-    <footer class="footer page__footer">&copy; 2020 Mesto Russia</footer>
-    <script src="scripts/initial-cards.js"></script>
-    <script type="module" src="scripts/index.js"></script>
-
-  </body>
+</body>
+<script src="script.js"></script>
 </html>
