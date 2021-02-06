@@ -16,7 +16,7 @@
   font-style: italic;
 }
 
-/* @font-face{
+@font-face{
   src: url('6501.woff') format('woff'),
        url('6501.ttf') format('truetype');
   font-family: 'Europe Bold';
@@ -28,7 +28,7 @@
         url('6503.ttf') format('truetype');
   font-family: 'EuropeDemiNormal';
   font-weight: normal;
-} */
+}
 /* @font-face {
   src:
   url('Inter-Bold.woff2') format('woff2'),

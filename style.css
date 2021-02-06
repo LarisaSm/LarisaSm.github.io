@@ -24,6 +24,7 @@ body {
 
 .main {
     font-family: Arial, Helvetica, sans-serif;
+    /* font-family: 'EuropeDemiNormal', sans-serif; */
 }
 
 .social {
@@ -73,7 +74,7 @@ textarea {
     background-color: white;
     text-align:justify;
     font-size: 15px;
-    font-family: 'EuropeDemiNormal';
+    font-family:  Arial, Helvetica, sans-serif;
 }
 
 abbr {
@@ -90,7 +91,7 @@ abbr {
 .feedback_title {
     text-align: center;
     /* font-family: 'Roboto', sans-serif; */
-    font-family: 'Europe Bold', sans-serif;
+    /* font-family: 'Europe Bold', sans-serif; */
     font-size: 30px;
     background-color: white;
     padding: 20px 0;
@@ -98,12 +99,12 @@ abbr {
 
 .form_title {
     text-align: center;
-    font-family: 'Europe Bold', sans-serif;
+    /* font-family: 'Europe Bold', sans-serif; */
     font-size: 20px;
 }
 
 form {
-    background-color:#6bb6e0;
+    /* background-color:#a0a0a0; */
     padding: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -143,15 +144,16 @@ form {
     height: 20px;
 }
 .form-submit {
-    width: 100%;
+    width: 30%;
     display: inline-block;
-    background-color: #006ba1;
-    font-size: 12px;
+    background-color: #007cba;
+    font-size: 15px;
     font-weight: 600;
+    color: white;
     text-transform: uppercase;
     margin: 0;
     padding: 14px 20px;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     cursor: pointer;
     text-align: center;
     letter-spacing: 0.1em;
