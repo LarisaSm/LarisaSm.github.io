@@ -1,68 +1,49 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8" />
-    <!--[if IE]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
-    <meta name="keywords" content="Отзывы о работе городского электротранспорта">
-    <title>НАМ ВАЖНО ВАШЕ МНЕНИЕ</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet" type="text/css"/>
-    <style>
-        article, aside, details, figcaption, figure, footer,header,
-        hgroup, menu, nav, section { display: block; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отзыв на троллейбус</title>
+  <link rel="stylesheet" href="./index.css">
 </head>
-<body>
-    <main>
-        <div class="loader hide spin" id="spinner"></div>
-        <h1 class="email-success hide" id="emailSuccess">Ваше обращение получено</h1>
-        <h1 class="email-success hide" id="emailFail">произошла ошибка при отправлении письма</h1>
-        <iframe name="hiddenFrame" width="0" height="0" style="display: none;"></iframe>
-        <section class="description">
-            <div style="height: 10px; background-color: transparent"></div>
-            <img class="description_img description_logo" src="images/TransSISTEMS_1080.png" alt="" srcset="images/TransSISTEMS_1080.png 1080w, images/TransSISTEMS_300.png 300w, images/TransSISTEMS_1024.png 1024w, images/TransSISTEMS_768.png 768w" sizes="(max-width: 1080px) 95vw, 1080px">
-            <img class="description_img" src="images/t5_1080.jpg" alt="" srcset="images/t5_1080.jpg 1080w, images/t5_300.jpg 300w, images/t5_1024.jpg 1024w, images/t5_768.jpg 768w" sizes="(max-width: 1080px) 100vw, 1080px">
-            <p id="descriptionShort" class="description_text"><strong>«Адмирал»</strong> – самый современный отечественный троллейбус. Специалисты ПК Транспортные системы разрабатывали эту машину с учетом новейших технических решений, воплощая мечты о комфортном, красивом и безопасном городском транспорте... <strong class="readMore" id="readMore">- читать далее</strong></p>
-            <p id="descriptionLong" class="description_text hide"><strong>«Адмирал»</strong> – самый современный отечественный троллейбус. Специалисты ПК Транспортные системы разрабатывали эту машину с учетом новейших технических решений, воплощая мечты о комфортном, красивом и безопасном городском транспорте.
-                Все здесь сделано для удобства пассажиров, начиная от хорошо читаемого маршрутоуказателя, от трех широких дверей, от мягкого, неназойливого освещения салона. Низкий пол делает троллейбус «Адмирал» доступным для родителей с колясками и маломобильных жителей. В отсутствие ступенек посадка и высадка пассажиров занимает меньше времени, такая машина быстрее идет от кольца до кольца. В салоне летом будет прохладно, а зимой тепло благодаря кондиционеру. Четыре медиакомплекса информируют пассажиров о том, в какой точке маршрута находится машина. Такой троллейбус уже может соперничать с личным автомобилем.</p>
-        </section>
-        <div class="divider"></div>
-        <section class="feedback">
-            <h3 class="feedback_title">Нам важно Ваше мнение!</h3>
-            <!-- <div class="divider"></div> -->
-            <form class="form" action="http://kupe.spb.ru/send/email" method="post" autocomplete="on" data-status="init" target="hiddenFrame" id="feedback">
-                <h2 class="form_title">Оставьте свой отзыв</h2>
-                <div class="form_divider"></div>
-                <div class="input-wrapper">
-                    <label class="input-wrapper_label" for="email"><strong>Введите Ваш эл. адрес:</strong> <abbr title="required">*</abbr></label>
-                    <input class="input-wrapper_input" id="email" type="email" required name="email">
-                    <p class="input-wrapper_error-text"> </p>
-                </div>
-                <div class="input-wrapper">
-                    <label class="input-wrapper_label" for="username"><strong>Введите имя:</strong> <abbr title="required">*</abbr></label>
-                    <input class="input-wrapper_input" id="username" required type="text" name="username">
-                    <p class="input-wrapper_error-text"> </p>
-                </div>
-                <div class="textarea-wrapper">
-                    <label class="input-wrapper_label" for="user_feedback"><strong>Текст отзыва:</strong></label>
-                    <textarea class="form_textarea" id="user_feedback" name="text"></textarea>
-                </div>
-                <button class="form-submit" id="submit">Отправить</button>
-            </form>
-        </section>
-        <section class="social">
-            <p class="social_text">Следите за нами в наших социальных сетях</p>
-            <div class="icon-wrapper">
-                <div class="social_icon gray"><a><i class="fas fa-link"></i></a></div>
-                <div class="social_icon black"><a><i class="fab fa-instagram"></i></a></div>
-                <div class="social_icon red"><a><i class="fab fa-youtube"></i></a></div>
-            </div>
-        </section>
-    </main>
+
+<body class="page">
+  <header class="header">
+    <img class="header_logo" src="./TransSISTEMS.png" alt="ПКТС">
+  </header>
+
+  <section class="description">
+    <img class="description_img" src="./t5.jpg" alt="Троллейбус">
+    <p class="description_text"><span class="description_span">«Адмирал»</span> – самый современный отечественный троллейбус. Специалисты ПК Транспортные системы разрабатывали эту машину с учетом новейших технических решений, воплощая мечты о комфортном, красивом и безопасном городском транспорте... <span class="toLong">- читать далее</span></p>
+    
+    <!-- <p>«Адмирал» – самый современный отечественный троллейбус. Специалисты ПК Транспортные системы разрабатывали эту машину с учетом новейших технических решений, воплощая мечты о комфортном, красивом и безопасном городском транспорте. Все здесь сделано для удобства пассажиров, начиная от хорошо читаемого маршрутоуказателя, от трех широких дверей, от мягкого, неназойливого освещения салона. Низкий пол делает троллейбус «Адмирал» доступным для родителей с колясками и маломобильных жителей. В отсутствие ступенек посадка и высадка пассажиров занимает меньше времени, такая машина быстрее идет от кольца до кольца. В салоне летом будет прохладно, а зимой тепло благодаря кондиционеру. Четыре медиакомплекса информируют пассажиров о том, в какой точке маршрута находится машина. Такой троллейбус уже может соперничать с личным автомобилем.</p> -->
+  </section>
+
+  <section class="feedback">
+    <h2 class="feedback_title">Нам важно Ваше мнение!</h2>
+    <form class="feedback_form">
+      <h2 class="form_title">Оставьте свой отзыв</h2>
+      <label class="input-wrapper_label" for="email">Введите Ваш эл. адрес:<abbr title="required">*</abbr></label>
+      <input class="input-wrapper_input" id="email" type="email" required name="email">
+
+      <label class="input-wrapper_label" for="username">Введите имя:<abbr title="required">*</abbr></label>
+      <input class="input-wrapper_input" id="username" required type="text" name="username">
+
+      <label class="input-wrapper_label" for="user_feedback">Текст отзыва:</label>
+      <textarea class="form_textarea" id="user_feedback" name="text"></textarea>
+      <button class="form_submit">Отправить</button>
+    </form>
+  </section>
+  <footer class="footer">
+    <h2 class="footer_title">Следите за нами в наших соцсетях</h2>
+    <div class="footer_img">
+      <img class="footer_image" src="./instagram.png" alt="Инстаграмм">
+      <img class="footer_image" src="./link.png" alt="Ссылка">
+      <img class="footer_image" src="./youtube.png" alt="Youtube">
+
+    </div>
+  </footer>
+
+
 </body>
-<script src="script.js"></script>
 </html>
