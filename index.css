@@ -151,11 +151,11 @@
 
 @media screen and (max-width: 560px) {
   .description_text {
-    font-size: 15px;
+    font-size: 13px;
   }
 
   .feedback_title {
-    font-size: 20px;
+    font-size: 30px;
   }  
 
   .input-wrapper_label {
@@ -171,7 +171,7 @@
   }
 
   .form_title {
-    font-size: 15px;
+    font-size: 25px;
   }
 
   .form_submit {
