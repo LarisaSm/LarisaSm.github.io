@@ -158,12 +158,25 @@
     font-size: 20px;
   }  
 
+  .input-wrapper_label {
+    font-size: 10px;
+  }
+
+  .input-wrapper_input {
+    height: 25px;
+  }
+
+  .form_textarea {
+    height: 50px;
+  }
+
   .form_title {
     font-size: 15px;
   }
 
   .form_submit {
     font-size: 10px;
+    height: 30px;
   }
 
   .footer_title {
