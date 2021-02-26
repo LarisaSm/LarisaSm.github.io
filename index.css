@@ -124,9 +124,10 @@
   margin-left: 30px;
   margin-bottom: 30px;
   object-fit: cover;
+  height: auto;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 860px) {
   .description_text {
     font-size: 20px;
   }
@@ -145,5 +146,27 @@
 
   .footer_title {
     font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .description_text {
+    font-size: 15px;
+  }
+
+  .feedback_title {
+    font-size: 20px;
+  }  
+
+  .form_title {
+    font-size: 15px;
+  }
+
+  .form_submit {
+    font-size: 10px;
+  }
+
+  .footer_title {
+    font-size: 10px;
   }
 }
