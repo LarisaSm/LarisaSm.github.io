@@ -142,7 +142,7 @@
   }  
 
   .form_title {
-    font-size: 25px;
+    font-size: 23px;
   margin-bottom: 15px;
 
   }
@@ -186,15 +186,15 @@
   }
 
   .form_title {
-    font-size: 25px;
-  margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
 
   }
 
   .form_submit {
     font-size: 10px;
     height: 30px;
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 
   }
 
