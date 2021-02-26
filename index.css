@@ -132,16 +132,25 @@
     font-size: 20px;
   }
 
+  .feedback {
+    padding-top: 30px;
+  }
+
   .feedback_title {
     font-size: 30px;
+    margin-bottom: 20px;
   }  
 
   .form_title {
     font-size: 25px;
+  margin-bottom: 15px;
+
   }
 
   .form_submit {
     font-size: 15px;
+  margin-bottom: 20px;
+
   }
 
   .footer_title {
@@ -154,8 +163,14 @@
     font-size: 13px;
   }
 
+  .feedback {
+    padding-top: 20px;
+  }
+
   .feedback_title {
     font-size: 25px;
+    margin-bottom: 10px;
+
   }  
 
   .input-wrapper_label {
@@ -172,11 +187,15 @@
 
   .form_title {
     font-size: 25px;
+  margin-bottom: 10px;
+
   }
 
   .form_submit {
     font-size: 10px;
     height: 30px;
+  margin-bottom: 10px;
+
   }
 
   .footer_title {
