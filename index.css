@@ -107,7 +107,7 @@
 
 .footer_title {
   color: whitesmoke;
-
+  font-size: 20px;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -116,11 +116,34 @@
   display: flex;
   justify-content: center;
   align-content: space-between;
-
+  
 }
 
 .footer_image {
   width: 50px;
   margin-left: 30px;
   margin-bottom: 30px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .description_text {
+    font-size: 20px;
+  }
+
+  .feedback_title {
+    font-size: 30px;
+  }  
+
+  .form_title {
+    font-size: 25px;
+  }
+
+  .form_submit {
+    font-size: 15px;
+  }
+
+  .footer_title {
+    font-size: 15px;
+  }
 }
