@@ -20,7 +20,8 @@
     margin-left: auto;
     margin-right: auto;
   width: 80%;
-
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .toLong {
@@ -34,6 +35,7 @@
 
 .description_img {
   width: 100%;
+
 }
 
 .description_span {
