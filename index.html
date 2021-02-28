@@ -34,7 +34,6 @@
         name="email"
         autocomplete="off"
         placeholder="Е-мейл"
-        required
       >
         <span id="email-error" class="input-error"></span>
 
@@ -58,6 +57,8 @@
         class="form_textarea" 
         id="user_feedback" 
         name="text"
+        minlength="2"
+        required
         placeholder="Напишите свои впечатления о троллейбусе"
       ></textarea>
       <button class="form_submit">Отправить</button>
