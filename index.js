@@ -85,15 +85,15 @@ enableValidation({
 
 submitButton.addEventListener("click", (evt) => {
   evt.preventDefault();
-  renderLoading (true, spinner);
+  // renderLoading (true, spinner);
 
-  const xhr = new XMLHttpRequest();
-  xhr.open('POST', 'http://web.monovar.ru/api/send/email', true);
-  xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-  xhr.send(JSON.stringify({email: email.value, username: username.value, text: text.value}));
-  xhr.onload = function () {
-    renderLoading (false, spinner);
-        };
+  // const xhr = new XMLHttpRequest();
+  // xhr.open('POST', 'http://web.monovar.ru/api/send/email', true);
+  // xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+  // xhr.send(JSON.stringify({email: email.value, username: username.value, text: text.value}));
+  // xhr.onload = function () {
+  //   renderLoading (false, spinner);
+  //       };
     valid['feedback_form'].reset();
 });
 
