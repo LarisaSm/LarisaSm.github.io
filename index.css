@@ -35,7 +35,6 @@
 
 .description_img {
   width: 100%;
-
 }
 
 .description_span {
@@ -146,7 +145,6 @@
   -webkit-box-shadow: none;
   float: none;
   height: auto;
-  margin: 0;
   outline: 0;
   width: 100%;
 }
